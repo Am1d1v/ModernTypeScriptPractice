@@ -1,11 +1,33 @@
 "use strict";
 // Basic Types
-let userName = 'Dima';
+/*let userName: string = 'Dima';
+
 //userName.isInteger();
 //userName = 5;
-const isBirthday = 1;
-const age = '30';
-const username = 'John';
-if (isBirthday) {
-    console.log(`Congrats ${username}, age: ${age + 1}`);
+*/
+//const isBirthday: boolean = true;
+//const age: number = 30;
+//const username: string = 'john';
+// Functions
+function logBirthdate(isBirthday, username, age) {
+    if (isBirthday) {
+        //console.log(`Congrats ${username}, ${age + 1}`);
+        return `Congrats ${username}, ${age + 1}`;
+    }
+    else {
+        return 'Error';
+    }
+    //return undefined;
 }
+const logBirthday = (isBirthday, username, age) => {
+    if (isBirthday) {
+        //console.log(`Congrats ${username}, ${age + 1}`);
+        return `Congrats ${username}, ${age + 1}`;
+    }
+    else {
+        return 'Error';
+    }
+    //return undefined;
+};
+logBirthdate(true, 'Jack', 30);
+console.log(logBirthday(true, 'Anna', 40));
