@@ -70,10 +70,35 @@ function transfer(available: boolean, amount: number, comission: number): void{
 transfer(true, 1000, 1.05);
 */
 // Type Never
+/*
 const endless = () => {
-    while (true) {
+    while (true){
+    
     }
-};
-const createError = (message) => {
+}
+
+const createError = (message: string) => {
     throw new Error(message);
-};
+}
+*/
+// Null & Undefined Ttpes
+let something; // Any type
+console.log(typeof (something)); // Undefined
+const test = null;
+const test2 = null;
+//const test3: string = null;
+//const test4: string = null;
+function RandomData() {
+    if (Math.random() < 0.5) {
+        return null;
+    }
+    else {
+        return '     Some Data      ';
+    }
+}
+const someData = RandomData();
+// if(typeof(someData) === 'string'){
+//     const trimmedData = someData.trim();
+//     console.log(trimmedData);
+// }
+const trimmedData = someData ? someData.trim() : null;
