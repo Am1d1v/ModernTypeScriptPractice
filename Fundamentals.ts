@@ -128,6 +128,7 @@ const trimmedData = someData ? someData.trim() : null;
 
 // Symbol Type
 
+/* 
 let id: symbol = Symbol('id');
 
 const data = {
@@ -135,13 +136,33 @@ const data = {
 }
 console.log(data[id]);
 
+ */
 
 
+// Object type
 
+const userData = {
+    isBirthday: true,
+    age: 30,
+    name: 'Jack'
+}
 
+/* 
+function logBirthday(data: {name: string, age: number, isBirthday: boolean}): void {
+    if(data.isBirthday){
+        console.log(`Congrats ${data.name}, age: ${data.age + 1}`)
+    }
+}
 
+ */
 
+function logBirthday({isBirthday, name, age}: {isBirthday: boolean, name: string, age: number}): void {
+    if(isBirthday){
+        console.log(`Congrats ${name}, age: ${age + 1}`)
+    }
+}
 
+logBirthday(userData);
 
 
 
