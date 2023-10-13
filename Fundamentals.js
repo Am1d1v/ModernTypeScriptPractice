@@ -82,23 +82,35 @@ const createError = (message: string) => {
 }
 */
 // Null & Undefined Ttpes
+/*
 let something; // Any type
-console.log(typeof (something)); // Undefined
-const test = null;
-const test2 = null;
+console.log(typeof(something)); // Undefined
+
+const test: null = null;
+const test2: any = null;
 //const test3: string = null;
 //const test4: string = null;
-function RandomData() {
-    if (Math.random() < 0.5) {
+
+function RandomData(){
+    if(Math.random() < 0.5){
         return null;
-    }
-    else {
+    } else {
         return '     Some Data      ';
     }
 }
+
 const someData = RandomData();
+
 // if(typeof(someData) === 'string'){
 //     const trimmedData = someData.trim();
 //     console.log(trimmedData);
 // }
+
 const trimmedData = someData ? someData.trim() : null;
+*/
+// Symbol Type
+let id = Symbol('id');
+const data = {
+    [id]: 1
+};
+console.log(data[id]);

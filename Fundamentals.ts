@@ -98,6 +98,7 @@ const createError = (message: string) => {
 
 // Null & Undefined Ttpes
 
+/* 
 let something; // Any type
 console.log(typeof(something)); // Undefined
 
@@ -121,7 +122,56 @@ const someData = RandomData();
 //     console.log(trimmedData);
 // }
 
-const trimmedData = someData ? someData.trim() : null;
+const trimmedData = someData ? someData.trim() : null; 
+*/
+
+
+// Symbol Type
+
+let id: symbol = Symbol('id');
+
+const data = {
+    [id]: 1
+}
+console.log(data[id]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
