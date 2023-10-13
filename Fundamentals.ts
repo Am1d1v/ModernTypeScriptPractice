@@ -13,6 +13,7 @@
 
 // Functions
 
+/*
 function logBirthdate(isBirthday: boolean, username: string, age: number): string{
     if(isBirthday){
         //console.log(`Congrats ${username}, ${age + 1}`);
@@ -37,17 +38,44 @@ const logBirthday  = (isBirthday: boolean, username: string, age: number): strin
 
 logBirthdate(true, 'Jack', 30);
 console.log(logBirthday(true, 'Anna', 40));
+*/
 
 
 
+// Any Type
+
+/*const userData = '{"isBirthday": true, "username": "Jack", "age": 40}';
 
 
+const userObj: {isBirthday: boolean, username: string, age: number} = JSON.parse(userData);
+console.log(userObj);
 
 
+let salary; // any type
+salary = 10000;
 
+let salary1: number;
+salary1 = 10000;
 
+*/
 
+const currRate = "1.05";
 
+const fetchCurr = (response: string): number => {
+    const data = JSON.parse(response);
+    return data;
+}
+
+function transfer(available: boolean, amount: number, comission: number): void{
+    if(available){
+        let res: number = fetchCurr(currRate) * amount * comission;
+        console.log(res);
+    } else {
+        console.log('Transfer not available');
+    }
+}
+
+transfer(true, 1000, 1.05);
 
 
 
