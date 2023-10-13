@@ -50,18 +50,30 @@ let salary1: number;
 salary1 = 10000;
 
 */
+/*
 const currRate = "1.05";
-const fetchCurr = (response) => {
+
+const fetchCurr = (response: string): number => {
     const data = JSON.parse(response);
     return data;
-};
-function transfer(available, amount, comission) {
-    if (available) {
-        let res = fetchCurr(currRate) * amount * comission;
+}
+
+function transfer(available: boolean, amount: number, comission: number): void{
+    if(available){
+        let res: number = fetchCurr(currRate) * amount * comission;
         console.log(res);
-    }
-    else {
+    } else {
         console.log('Transfer not available');
     }
 }
+
 transfer(true, 1000, 1.05);
+*/
+// Type Never
+const endless = () => {
+    while (true) {
+    }
+};
+const createError = (message) => {
+    throw new Error(message);
+};

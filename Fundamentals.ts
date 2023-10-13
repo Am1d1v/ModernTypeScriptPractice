@@ -59,6 +59,7 @@ salary1 = 10000;
 
 */
 
+/*
 const currRate = "1.05";
 
 const fetchCurr = (response: string): number => {
@@ -76,6 +77,20 @@ function transfer(available: boolean, amount: number, comission: number): void{
 }
 
 transfer(true, 1000, 1.05);
+*/
+
+
+// Type Never
+
+const endless = () => {
+    while (true){
+    
+    }
+}
+
+const createError = (message: string) => {
+    throw new Error(message);
+}
 
 
 
