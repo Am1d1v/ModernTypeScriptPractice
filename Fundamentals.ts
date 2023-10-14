@@ -235,6 +235,7 @@ const userData = {
 }
 
 const userDataTuple: [boolean, number, string] = [true, 30, 'Jack'];
+const userDataTuple2: [boolean, number, ...string[]] = [true, 30, 'Jack', 'Anna', 'Helga'];
 //userDataTuple[0] = 'true';
 userDataTuple[0] = true;
 
@@ -245,7 +246,7 @@ const filtered = userDataTuple.filter((elem) => {
 })
 console.log(filtered);
 
-
+const userDataTuple3: [...boolean[], string] = [false, true, false, 'Dima'];
 
 
 

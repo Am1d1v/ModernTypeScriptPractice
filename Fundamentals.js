@@ -203,6 +203,7 @@ const userData = {
     name: 'Jack'
 };
 const userDataTuple = [true, 30, 'Jack'];
+const userDataTuple2 = [true, 30, 'Jack', 'Anna', 'Helga'];
 //userDataTuple[0] = 'true';
 userDataTuple[0] = true;
 const [isBirthday, Age, username] = userDataTuple;
@@ -210,3 +211,4 @@ const filtered = userDataTuple.filter((elem) => {
     return typeof (elem) !== 'boolean';
 });
 console.log(filtered);
+const userDataTuple3 = [false, true, false, 'Dima'];
