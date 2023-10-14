@@ -96,7 +96,7 @@ const createError = (message: string) => {
 
 
 
-// Null & Undefined Ttpes
+// Null & Undefined Types
 
 /* 
 let something; // Any type
@@ -170,6 +170,7 @@ logBirthday(userData);
 
 // Array
 
+/*
 const departments: string[] = ['dev', 'design', 'marketing'];
 const department = departments[0];
 
@@ -177,15 +178,51 @@ const nums: number[] = [1, 2, 3];
 const nums2: number[][] = [[1, 2, 3], [4, 5, 6]];
 
 const report = departments
-                    .filter(department => department !== 'dev')
-                    .map(department => `${department} - done`);
+                    .filter((department: string) => department !== 'dev')
+                    .map((department: string) => `${department} - done`);
 console.log(report);
 
 
+const [first] = report;
+console.log(first);
+*/
 
 
+const electricityUserData = {
+    readings: 90,
+    units: "kWt",
+    mode: "double"
+};
 
+const waterUserData = {
+    readings : 5,
+    units: "m3"
+};
 
+const elRate: number = 0.45;
+const wRate: number = 2;
+
+const monthPayment: number[] = [0, 0]; // [Electricity, Water]
+
+const calculatePayments = ({readings, mode}: {readings: number, mode: string}, wData: {readings: number}, elRate: number, wRate: number): void => {
+    if(mode === "double" && readings < 50){
+        monthPayment[0] = readings * elRate * 0.7;
+    } else {
+        monthPayment[0] = readings * elRate;
+    }
+
+    monthPayment[1] = wData.readings * wRate
+   
+    console.log(`
+    Readings: ${readings}
+    Mode: ${mode}
+    WaterData: ${wData.readings}
+    elRate: ${elRate}
+    wRate: ${wRate}
+    `)
+};
+
+console.log(calculatePayments(electricityUserData, waterUserData, elRate, wRate));
 
 
 
