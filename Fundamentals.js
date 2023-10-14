@@ -160,32 +160,53 @@ console.log(report);
 const [first] = report;
 console.log(first);
 */
-const electricityUserData = {
+/*const electricityUserData = {
     readings: 90,
     units: "kWt",
     mode: "double"
 };
+
 const waterUserData = {
-    readings: 5,
+    readings : 5,
     units: "m3"
 };
-const elRate = 0.45;
-const wRate = 2;
-const monthPayment = [0, 0]; // [Electricity, Water]
-const calculatePayments = ({ readings, mode }, wData, elRate, wRate) => {
-    if (mode === "double" && readings < 50) {
+
+const elRate: number = 0.45;
+const wRate: number = 2;
+
+const monthPayment: number[] = [0, 0]; // [Electricity, Water]
+
+const calculatePayments = ({readings, mode}: {readings: number, mode: string}, wData: {readings: number}, elRate: number, wRate: number): void => {
+    if(mode === "double" && readings < 50){
         monthPayment[0] = readings * elRate * 0.7;
-    }
-    else {
+    } else {
         monthPayment[0] = readings * elRate;
     }
-    monthPayment[1] = wData.readings * wRate;
+
+    monthPayment[1] = wData.readings * wRate
+   
     console.log(`
     Readings: ${readings}
     Mode: ${mode}
     WaterData: ${wData.readings}
     elRate: ${elRate}
     wRate: ${wRate}
-    `);
+    `)
 };
+
 console.log(calculatePayments(electricityUserData, waterUserData, elRate, wRate));
+*/
+// Tuples
+const userData = {
+    isBirthday: true,
+    age: 30,
+    name: 'Jack'
+};
+const userDataTuple = [true, 30, 'Jack'];
+//userDataTuple[0] = 'true';
+userDataTuple[0] = true;
+const [isBirthday, Age, username] = userDataTuple;
+const filtered = userDataTuple.filter((elem) => {
+    return typeof (elem) !== 'boolean';
+});
+console.log(filtered);

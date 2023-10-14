@@ -188,7 +188,7 @@ console.log(first);
 */
 
 
-const electricityUserData = {
+/*const electricityUserData = {
     readings: 90,
     units: "kWt",
     mode: "double"
@@ -223,9 +223,27 @@ const calculatePayments = ({readings, mode}: {readings: number, mode: string}, w
 };
 
 console.log(calculatePayments(electricityUserData, waterUserData, elRate, wRate));
+*/
 
 
+// Tuples
 
+const userData = {
+    isBirthday: true,
+    age: 30,
+    name: 'Jack'
+}
+
+const userDataTuple: [boolean, number, string] = [true, 30, 'Jack'];
+//userDataTuple[0] = 'true';
+userDataTuple[0] = true;
+
+const [isBirthday, Age, username] = userDataTuple;
+
+const filtered = userDataTuple.filter((elem) => {
+    return typeof(elem) !== 'boolean' 
+})
+console.log(filtered);
 
 
 
