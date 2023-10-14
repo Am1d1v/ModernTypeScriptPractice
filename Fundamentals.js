@@ -239,14 +239,54 @@ function printMessage(message) {
 }
 printMessage('print message');
 printMessage(10.8);
+/*
+function printSomething(item: string | number | boolean): void{
+    if( typeof item === 'string' || typeof item === 'number'){
+        console.log(item.toString())
+    } else {
+        console.log(item);
+    }
+}
+
+printSomething('Message');
+printSomething(5);
+printSomething(true);
+*/
 function printSomething(item) {
-    if (typeof item === 'string' || typeof item === 'number') {
-        console.log(item.toString());
+    if (Array.isArray(item)) {
+        item.forEach(i => {
+            console.log(i + ' strArray');
+        });
+    }
+    else if (typeof item === 'number') {
+        console.log(item.toFixed(0));
     }
     else {
         console.log(item);
     }
 }
-printSomething('Message');
 printSomething(5);
+printSomething(['a', 'b']);
 printSomething(true);
+const printReading = (a, b) => {
+    if (a === b) {
+        console.log(a, b);
+    }
+};
+printReading(100, 100);
+const printReading2 = (a, b) => {
+    console.log(a.slice(0, 3));
+};
+const checkReading = (readings) => {
+    if ('system' in readings) {
+        console.log(readings.system);
+    }
+    else {
+        console.log(readings.user);
+    }
+};
+function logValue(x) {
+    if (x instanceof Date) {
+        console.log(x); // Date type
+    }
+}
