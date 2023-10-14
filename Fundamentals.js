@@ -218,10 +218,35 @@ console.log(filtered);
 const userDataTuple3: [...boolean[], string] = [false, true, false, 'Dima'];
 */
 // Union
-const message = 'Some Message';
-const messages = ['a', 'b'];
-function printMessage(message) {
+/*
+const message: string | number = 'Some Message';
+const messages: string[] | number[] = ['a', 'b'];
+
+function printMessage(message: string | number): void{
     console.log(message);
 }
 printMessage('print message');
 printMessage(10);
+*/
+// Narrowing
+function printMessage(message) {
+    if (typeof (message) === 'string') {
+        console.log(message.toUpperCase());
+    }
+    else {
+        console.log(message.toFixed(0));
+    }
+}
+printMessage('print message');
+printMessage(10.8);
+function printSomething(item) {
+    if (typeof item === 'string' || typeof item === 'number') {
+        console.log(item.toString());
+    }
+    else {
+        console.log(item);
+    }
+}
+printSomething('Message');
+printSomething(5);
+printSomething(true);
