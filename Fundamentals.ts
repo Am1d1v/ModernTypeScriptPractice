@@ -141,6 +141,7 @@ console.log(data[id]);
 
 // Object type
 
+/*
 const userData = {
     isBirthday: true,
     age: 30,
@@ -154,7 +155,7 @@ function logBirthday(data: {name: string, age: number, isBirthday: boolean}): vo
     }
 }
 
- */
+ 
 
 function logBirthday({isBirthday, name, age}: {isBirthday: boolean, name: string, age: number}): void {
     if(isBirthday){
@@ -163,10 +164,22 @@ function logBirthday({isBirthday, name, age}: {isBirthday: boolean, name: string
 }
 
 logBirthday(userData);
+*/
 
 
 
+// Array
 
+const departments: string[] = ['dev', 'design', 'marketing'];
+const department = departments[0];
+
+const nums: number[] = [1, 2, 3];
+const nums2: number[][] = [[1, 2, 3], [4, 5, 6]];
+
+const report = departments
+                    .filter(department => department !== 'dev')
+                    .map(department => `${department} - done`);
+console.log(report);
 
 
 
