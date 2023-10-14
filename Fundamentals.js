@@ -197,18 +197,31 @@ const calculatePayments = ({readings, mode}: {readings: number, mode: string}, w
 console.log(calculatePayments(electricityUserData, waterUserData, elRate, wRate));
 */
 // Tuples
-const userData = {
+/*const userData = {
     isBirthday: true,
     age: 30,
     name: 'Jack'
-};
-const userDataTuple = [true, 30, 'Jack'];
-const userDataTuple2 = [true, 30, 'Jack', 'Anna', 'Helga'];
+}
+
+const userDataTuple: [boolean, number, string] = [true, 30, 'Jack'];
+const userDataTuple2: [boolean, number, ...string[]] = [true, 30, 'Jack', 'Anna', 'Helga'];
 //userDataTuple[0] = 'true';
 userDataTuple[0] = true;
+
 const [isBirthday, Age, username] = userDataTuple;
+
 const filtered = userDataTuple.filter((elem) => {
-    return typeof (elem) !== 'boolean';
-});
+    return typeof(elem) !== 'boolean'
+})
 console.log(filtered);
-const userDataTuple3 = [false, true, false, 'Dima'];
+
+const userDataTuple3: [...boolean[], string] = [false, true, false, 'Dima'];
+*/
+// Union
+const message = 'Some Message';
+const messages = ['a', 'b'];
+function printMessage(message) {
+    console.log(message);
+}
+printMessage('print message');
+printMessage(10);

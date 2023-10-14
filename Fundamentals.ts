@@ -228,7 +228,7 @@ console.log(calculatePayments(electricityUserData, waterUserData, elRate, wRate)
 
 // Tuples
 
-const userData = {
+/*const userData = {
     isBirthday: true,
     age: 30,
     name: 'Jack'
@@ -247,8 +247,19 @@ const filtered = userDataTuple.filter((elem) => {
 console.log(filtered);
 
 const userDataTuple3: [...boolean[], string] = [false, true, false, 'Dima'];
+*/
 
 
+// Union
+
+const message: string | number = 'Some Message';
+const messages: string[] | number[] = ['a', 'b'];
+
+function printMessage(message: string | number): void{
+    console.log(message);
+}
+printMessage('print message');
+printMessage(10);
 
 
 
