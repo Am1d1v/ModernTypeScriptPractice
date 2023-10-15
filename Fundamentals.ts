@@ -408,9 +408,24 @@ createAnimation('id', 'fade', 'ease', 5, 'infinite');
 
 
 
+const serverConfig: {protocol: 'https'; port: 3001} = {
+    protocol: 'https',
+    port: 3001
+}
 
+const start:(protocol: 'http' | 'https',
+             port: 3000 | 3001 ) => string = (protocol: 'http' | 'https', port: 3000 | 3001): 'Started' =>{
 
+    if(port === 3000 || port === 3001){
+        console.log(`Server started on ${protocol}://server:${port}`);
+    } else {
+        console.error('Invalid port');
+    }
 
+    
+    return 'Started';
+}
+start(serverConfig.protocol, serverConfig.port);
 
 
 
