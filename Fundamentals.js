@@ -304,9 +304,24 @@ function logValue(x: string | Date){
  */
 // Literal Types
 let msg = 'Message';
+const port3000 = 3000;
+const port3001 = 3001;
 //msg = '';
 function start(protocol, port) {
-    console.log(`Server started on ${protocol}://server:${port}`);
+    if (port === port3000 || port === port3001) {
+        console.log(`Server started on ${protocol}://server:${port}`);
+    }
+    else {
+        console.error('Invalid port');
+    }
     return 'Started';
 }
 start('https', 3000);
+function createAnimation(id, animationName, timingFunction = 'ease', duration, iterationCount) {
+    //   const elem = document.querySelector(`#${id}`) as HTMLElement;
+    //   if(elem){
+    //     elem.style.animation = `${animationName} ${timingFunction} ${duration} ${iterationCount}`;
+    console.log(`${animationName} ${timingFunction} ${duration} ${iterationCount}`);
+    // }
+}
+createAnimation('id', 'fade', 'ease', 5, 'infinite');

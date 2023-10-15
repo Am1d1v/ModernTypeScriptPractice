@@ -345,20 +345,40 @@ function logValue(x: string | Date){
 
 let msg: 'Message' = 'Message';
 
+const port3000: number = 3000;
+const port3001: number = 3001;
+
 //msg = '';
 
 function start(protocol: 'http' | 'https', port: 3000 | 3001): 'Started'{
 
-    console.log(`Server started on ${protocol}://server:${port}`);
+    if(port === port3000 || port === port3001){
+        console.log(`Server started on ${protocol}://server:${port}`);
+    } else {
+        console.error('Invalid port');
+    }
+
+    
     return 'Started';
 }
 
 start('https', 3000);
 
 
+function createAnimation(id: string | number,
+                         animationName: string,
+                         timingFunction: 'ease' | 'ease-out' | 'ease-in' = 'ease',
+                         duration: number,
+                         iterationCount: 'infinite' | number): void {
+ //   const elem = document.querySelector(`#${id}`) as HTMLElement;
+ //   if(elem){
+   //     elem.style.animation = `${animationName} ${timingFunction} ${duration} ${iterationCount}`;
+       console.log(`${animationName} ${timingFunction} ${duration} ${iterationCount}`);
+   // }
+    
+}
 
-
-
+createAnimation('id', 'fade', 'ease', 5, 'infinite');
 
 
 
