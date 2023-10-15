@@ -342,7 +342,7 @@ function logValue(x: string | Date){
 
 
 // Literal Types
-
+/* 
 let msg: 'Message' = 'Message';
 
 const port3000: number = 3000;
@@ -380,13 +380,29 @@ function createAnimation(id: string | number,
 
 createAnimation('id', 'fade', 'ease', 5, 'infinite');
 
+ */
 
 
+// Type Aliases
 
 
+type AnimationTimingFunc = 'ease' | 'ease-out' | 'ease-in';
+type AnimationId = string | number;
 
+function createAnimation(id: AnimationId,
+    animationName: string,
+    timingFunction: AnimationTimingFunc,
+    duration: number,
+    iterationCount: 'infinite' | number): void {
+//   const elem = document.querySelector(`#${id}`) as HTMLElement;
+//   if(elem){
+//     elem.style.animation = `${animationName} ${timingFunction} ${duration} ${iterationCount}`;
+console.log(`${animationName} ${timingFunction} ${duration} ${iterationCount}`);
+// }
 
+}
 
+createAnimation('id', 'fade', 'ease', 5, 'infinite');
 
 
 
