@@ -229,16 +229,18 @@ printMessage('print message');
 printMessage(10);
 */
 // Narrowing
-function printMessage(message) {
-    if (typeof (message) === 'string') {
+/*
+function printMessage(message: string | number): void{
+    if(typeof(message) === 'string'){
         console.log(message.toUpperCase());
-    }
-    else {
-        console.log(message.toFixed(0));
+    } else {
+        console.log(message.toFixed(0))
     }
 }
 printMessage('print message');
 printMessage(10.8);
+
+ */
 /*
 function printSomething(item: string | number | boolean): void{
     if( typeof item === 'string' || typeof item === 'number'){
@@ -252,41 +254,59 @@ printSomething('Message');
 printSomething(5);
 printSomething(true);
 */
-function printSomething(item) {
-    if (Array.isArray(item)) {
+/*
+function printSomething(item: string[] | number | boolean): void{
+    if(Array.isArray(item)){
         item.forEach(i => {
-            console.log(i + ' strArray');
-        });
-    }
-    else if (typeof item === 'number') {
-        console.log(item.toFixed(0));
-    }
-    else {
-        console.log(item);
+            console.log(i + ' strArray')
+        })
+    } else if (typeof item === 'number'){
+        console.log(item.toFixed(0))
+    } else {
+        console.log(item)
     }
 }
+
 printSomething(5);
 printSomething(['a', 'b']);
 printSomething(true);
-const printReading = (a, b) => {
-    if (a === b) {
+
+
+const printReading = (a: number | string, b: number | boolean): void => {
+    if(a === b){
         console.log(a, b);
     }
-};
+}
 printReading(100, 100);
-const printReading2 = (a, b) => {
+
+
+const printReading2 = (a: number[] | string, b: number | boolean): void => {
     console.log(a.slice(0, 3));
-};
-const checkReading = (readings) => {
-    if ('system' in readings) {
+}
+
+
+
+const checkReading = (readings: {system: number} | {user: number}): void => {
+    if('system' in readings){
         console.log(readings.system);
-    }
-    else {
+    } else {
         console.log(readings.user);
     }
-};
-function logValue(x) {
-    if (x instanceof Date) {
+}
+
+
+function logValue(x: string | Date){
+    if(x instanceof Date){
         console.log(x); // Date type
     }
 }
+
+ */
+// Literal Types
+let msg = 'Message';
+//msg = '';
+function start(protocol, port) {
+    console.log(`Server started on ${protocol}://server:${port}`);
+    return 'Started';
+}
+start('https', 3000);

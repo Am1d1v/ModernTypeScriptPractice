@@ -265,7 +265,7 @@ printMessage(10);
 
 
 // Narrowing
-
+/* 
 function printMessage(message: string | number): void{
     if(typeof(message) === 'string'){
         console.log(message.toUpperCase());
@@ -276,7 +276,7 @@ function printMessage(message: string | number): void{
 printMessage('print message');
 printMessage(10.8);
 
-
+ */
 /*
 function printSomething(item: string | number | boolean): void{
     if( typeof item === 'string' || typeof item === 'number'){
@@ -290,7 +290,7 @@ printSomething('Message');
 printSomething(5);
 printSomething(true);
 */
-
+/* 
 function printSomething(item: string[] | number | boolean): void{
     if(Array.isArray(item)){
         item.forEach(i => {
@@ -337,15 +337,23 @@ function logValue(x: string | Date){
     }
 }
 
+ */
 
 
 
+// Literal Types
 
+let msg: 'Message' = 'Message';
 
+//msg = '';
 
+function start(protocol: 'http' | 'https', port: 3000 | 3001): 'Started'{
 
+    console.log(`Server started on ${protocol}://server:${port}`);
+    return 'Started';
+}
 
-
+start('https', 3000);
 
 
 
