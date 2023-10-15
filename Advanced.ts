@@ -59,23 +59,23 @@ const styles: IStyles = {
 
 
 
-const serverConfig = {
+const serverConfig: IBasicConfig = {
     protocol: 'https',
     port: 3001,
-    role: 'admin'
+   // role: 'admin'
 }
 
-const backupConfig = {
+const backupConfig: IBasicConfig = {
     protocol: 'http',
     port: 3000,
 }
 
-interface BasicConfig {
+interface IBasicConfig {
     protocol: string;
     port: number
 }
 
-const startServer = (config: BasicConfig): void => {
+const startServer = (config: IBasicConfig): void => {
     
     console.log(`Port: ${config.port}, Protocol: ${config.protocol}`);
 }

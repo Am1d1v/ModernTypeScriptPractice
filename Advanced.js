@@ -8,7 +8,7 @@ const styles = {
 const serverConfig = {
     protocol: 'https',
     port: 3001,
-    role: 'admin'
+    // role: 'admin'
 };
 const backupConfig = {
     protocol: 'http',
