@@ -10,7 +10,13 @@ function createAnimation(id, animationName, timingFunction, duration, iterationC
 createAnimation('id', 'fade', 'ease', 5, 'infinite');
 const serverConfig = {
     protocol: 'https',
-    port: 3001
+    port: 3001,
+    role: 'admin'
+};
+const backupConfig = {
+    protocol: 'http',
+    port: 3000,
+    role: 'sysadmin'
 };
 const start = (protocol, port) => {
     if (port === 3000 || port === 3001) {

@@ -406,15 +406,28 @@ createAnimation('id', 'fade', 'ease', 5, 'infinite');
 
 
 
+type Config = {protocol: 'https' | 'http'; port: 3000 | 3001 };
+type Role = {
+    role: string;
+};
 
+type ConfigWithRole = Config & Role;
 
-const serverConfig: {protocol: 'https'; port: 3001} = {
+const serverConfig: ConfigWithRole = {
     protocol: 'https',
-    port: 3001
+    port: 3001,
+    role: 'admin'
 }
 
-const start:(protocol: 'http' | 'https',
-             port: 3000 | 3001 ) => string = (protocol: 'http' | 'https', port: 3000 | 3001): 'Started' =>{
+const backupConfig: ConfigWithRole = {
+    protocol: 'http',
+    port: 3000,
+    role: 'sysadmin'
+}
+
+type startFunction = (protocol: 'http' | 'https', port: 3000 | 3001 ) => string
+
+const start: startFunction = (protocol: 'http' | 'https', port: 3000 | 3001): 'Started' =>{
 
     if(port === 3000 || port === 3001){
         console.log(`Server started on ${protocol}://server:${port}`);
