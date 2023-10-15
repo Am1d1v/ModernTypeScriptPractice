@@ -1,15 +1,20 @@
 "use strict";
 // Interfaces
+const styles = {
+    position: 'ablolute',
+    top: '20px',
+    left: '50px'
+};
 const serverConfig = {
     protocol: 'https',
     port: 3001,
-    role: 'admin',
-    log: (msg) => {
-        console.log(msg);
-    }
+    role: 'admin'
 };
-const startServer = (protocol, port, log) => {
-    log(`Server started on ${protocol}://server:${port}`);
-    return 'Server started';
+const backupConfig = {
+    protocol: 'http',
+    port: 3000,
 };
-startServer(serverConfig.protocol, serverConfig.port, serverConfig.log);
+const startServer = (config) => {
+    console.log(`Port: ${config.port}, Protocol: ${config.protocol}`);
+};
+startServer(serverConfig);

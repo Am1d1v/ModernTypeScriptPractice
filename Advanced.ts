@@ -2,8 +2,13 @@
 
 // Interfaces
 
-type Config = {protocol: 'http' | 'https', port: 3000 | 3001};
-type StartFunction = (protocol: 'http' | 'https', port: 3000 | 3001, log: Function) => string;
+/*type Config = {protocol: 'http' | 'https',
+               port: 3000 | 3001};
+
+
+type StartFunction = (protocol: 'http' | 'https',
+                      port: 3000 | 3001,
+                      log: (msg: string) => void) => string;
 
 
 interface IConfig {
@@ -39,15 +44,42 @@ const startServer: StartFunction = (protocol: 'http' | 'https',
 };
 
 startServer(serverConfig.protocol, serverConfig.port, serverConfig.log)
+*/
+
+
+interface IStyles {
+    [key: string]: string
+}
+
+const styles: IStyles = {
+    position: 'ablolute',
+    top: '20px',
+    left: '50px'
+}
 
 
 
+const serverConfig = {
+    protocol: 'https',
+    port: 3001,
+    role: 'admin'
+}
 
+const backupConfig = {
+    protocol: 'http',
+    port: 3000,
+}
 
+interface BasicConfig {
+    protocol: string;
+    port: number
+}
 
-
-
-
+const startServer = (config: BasicConfig): void => {
+    
+    console.log(`Port: ${config.port}, Protocol: ${config.protocol}`);
+}
+startServer(serverConfig);
 
 
 
