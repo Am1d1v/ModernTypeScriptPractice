@@ -46,7 +46,7 @@ const startServer: StartFunction = (protocol: 'http' | 'https',
 startServer(serverConfig.protocol, serverConfig.port, serverConfig.log)
 */
 
-
+/*
 interface IStyles {
     [key: string]: string
 }
@@ -80,10 +80,33 @@ const startServer = (config: IBasicConfig): void => {
     console.log(`Port: ${config.port}, Protocol: ${config.protocol}`);
 }
 startServer(serverConfig);
+*/
 
+// Interface or Type
 
+interface IConfig {
+    protocol: 'http' | 'https';
+    port: 3000 | 3001;
+}
 
+interface IRole {
+    role: string;
+}
 
+interface IConfigWithIRole extends IConfig, IRole {
+
+};
+
+type Config = {
+    protocol: 'http' | 'https';
+    port: 3000 | 3001;
+}
+
+type Role = {
+    role: string;
+}
+
+type ConfigWithRole = Config & Role;
 
 
 
