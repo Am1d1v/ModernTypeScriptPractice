@@ -165,6 +165,7 @@ sendUserData(user, 'somedb')
 
 // Optional Property Modifier
 
+/*
 interface IUser {
     login: string;
     password: string;
@@ -186,17 +187,39 @@ function sendUserData(obj: IUser, database?: string): void{
 sendUserData(user);
 sendUserData(user, database);
 
+*/
+
+// Readonly Property Modifier
+
+interface IUser {
+    readonly login: string;
+    password: string;
+    age?: number;
+    readonly addr?: string;
+}
+
+const user: IUser = {
+    login: 'Admin',
+    password: '12345',
+    age: 40,
+}
+
+//user.login = 'newAdmin'; readonly property
+user.password = '012345';
 
 
+const basicPorts: readonly number[] = [3000, 3001, 5555];
+//basicPorts[0] = 5; error
+//basicPorts.push(1); error
 
+const availablePorts: readonly [number, number] = [3000, 3001];
 
+const userFreeze: Readonly<IUser> = {
+    login: 'User',
+    password: 'user12345'
+}
 
-
-
-
-
-
-
+//userFreeze.login = 'newUser'; error
 
 
 

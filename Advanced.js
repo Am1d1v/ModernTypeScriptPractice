@@ -5,9 +5,14 @@ const user = {
     password: '12345',
     age: 40,
 };
-const database = 'databaseName';
-function sendUserData(obj, database) {
-    console.log(obj, database);
-}
-sendUserData(user);
-sendUserData(user, database);
+//user.login = 'newAdmin'; readonly property
+user.password = '012345';
+const basicPorts = [3000, 3001, 5555];
+//basicPorts[0] = 5; error
+//basicPorts.push(1); error
+const availablePorts = [3000, 3001];
+const userFreeze = {
+    login: 'User',
+    password: 'user12345'
+};
+//userFreeze.login = 'newUser'; error
