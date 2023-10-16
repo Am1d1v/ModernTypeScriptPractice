@@ -84,6 +84,7 @@ startServer(serverConfig);
 
 // Interface or Type
 
+/*
 interface IConfig {
     protocol: 'http' | 'https';
     port: 3000 | 3001;
@@ -97,8 +98,10 @@ interface IConfigWithIRole extends IConfig, IRole {
 
 };
 
+type Protocol = 'http' | 'https';
+
 type Config = {
-    protocol: 'http' | 'https';
+    protocol: Protocol ;
     port: 3000 | 3001;
 }
 
@@ -107,11 +110,22 @@ type Role = {
 }
 
 type ConfigWithRole = Config & Role;
+*/
 
+// Type Inference
 
+let num;
+num = 1000; // Any Type
 
+interface IUserData {
+    isBirthday: boolean;
+    age: number;
+    username: string;
+}
 
-
+const userData = '{"isBirthday": true, "age": 35, "username": "Anna"}';
+const userObj: IUserData = JSON.parse(userData); // Any Type
+console.log(userObj)
 
 
 
