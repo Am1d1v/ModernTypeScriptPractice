@@ -114,6 +114,7 @@ type ConfigWithRole = Config & Role;
 
 // Type Inference
 
+/*
 let num;
 num = 1000; // Any Type
 
@@ -139,7 +140,22 @@ if(isOkay){
 const isOk = true; // true type
 const somenum: number = 1000; // number type
 const defnum = 100; // 100 type
+*/
 
 
+// Non-Null & Non-Undefined
 
+interface IUser {
+    name: string;
+    age?: number
+}
 
+const user: IUser = {
+    name: 'Anna',
+    age: 35
+}
+
+function sendUserData(obj: IUser, db: string): void {
+    console.log(obj!.name.toUpperCase());
+}
+sendUserData(user, 'somedb')
