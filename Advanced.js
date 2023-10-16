@@ -1,10 +1,13 @@
 "use strict";
 // Interfaces
 const user = {
-    name: 'Anna',
-    age: 35
+    login: 'Admin',
+    password: '12345',
+    age: 40,
 };
-function sendUserData(obj, db) {
-    console.log(obj.name.toUpperCase());
+const database = 'databaseName';
+function sendUserData(obj, database) {
+    console.log(obj, database);
 }
-sendUserData(user, 'somedb');
+sendUserData(user);
+sendUserData(user, database);

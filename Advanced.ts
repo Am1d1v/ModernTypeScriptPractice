@@ -145,6 +145,7 @@ const defnum = 100; // 100 type
 
 // Non-Null & Non-Undefined
 
+/*
 interface IUser {
     name: string;
     age?: number
@@ -159,3 +160,76 @@ function sendUserData(obj: IUser, db: string): void {
     console.log(obj!.name.toUpperCase());
 }
 sendUserData(user, 'somedb')
+*/
+
+
+// Optional Property Modifier
+
+interface IUser {
+    login: string;
+    password: string;
+    age: number;
+    addr?: string;
+}
+
+const user: IUser = {
+    login: 'Admin',
+    password: '12345',
+    age: 40,
+}
+
+const database = 'databaseName';
+
+function sendUserData(obj: IUser, database?: string): void{
+    console.log(obj, database)
+}
+sendUserData(user);
+sendUserData(user, database);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
