@@ -110,5 +110,13 @@ type ConfigWithRole = Config & Role;
 let num;
 num = 1000; // Any Type
 const userData = '{"isBirthday": true, "age": 35, "username": "Anna"}';
-const userObj = JSON.parse(userData); // Any Type
+const userObj = JSON.parse(userData); // Any Type if no interface
 console.log(userObj);
+let isOkay = true;
+let movement = false;
+if (isOkay) {
+    movement = 'moving';
+}
+const isOk = true; // true type
+const somenum = 1000; // number type
+const defnum = 100; // 100 type

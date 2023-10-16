@@ -124,15 +124,21 @@ interface IUserData {
 }
 
 const userData = '{"isBirthday": true, "age": 35, "username": "Anna"}';
-const userObj: IUserData = JSON.parse(userData); // Any Type
+const userObj: IUserData = JSON.parse(userData); // Any Type if no interface
 console.log(userObj)
 
 
+let isOkay = true;
+let movement: boolean | string = false;
+
+if(isOkay){
+    movement = 'moving';
+}
 
 
-
-
-
+const isOk = true; // true type
+const somenum: number = 1000; // number type
+const defnum = 100; // 100 type
 
 
 
