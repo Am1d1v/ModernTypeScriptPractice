@@ -191,6 +191,7 @@ sendUserData(user, database);
 
 // Readonly Property Modifier
 
+/*
 interface IUser {
     readonly login: string;
     password: string;
@@ -220,9 +221,29 @@ const userFreeze: Readonly<IUser> = {
 }
 
 //userFreeze.login = 'newUser'; error
+*/
 
+// Enums
 
+enum Directions {
+    TOP,
+    RIGHT,
+    LEFT,
+    BOTTOM
+}
 
+enum  TimingFunc {
+    EASE = 1,
+    EASE_IN = 10,
+    LINEAR = 100
+}
+
+function frame (elem: string, dir: Directions, tFunc: string): void {
+    if(dir === Directions.RIGHT){
+
+    }
+}
+frame('id', Directions.RIGHT, 'fast');
 
 
 
