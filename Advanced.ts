@@ -225,6 +225,7 @@ const userFreeze: Readonly<IUser> = {
 
 // Enums
 
+/*
 enum Directions {
     TOP,
     RIGHT,
@@ -233,19 +234,29 @@ enum Directions {
 }
 
 enum  TimingFunc {
-    EASE = 1,
-    EASE_IN = 10,
-    LINEAR = 100
+    EASE = 'ease',
+    EASE_IN = 'ease-in',
+    LINEAR = 'linear',
 }
 
-function frame (elem: string, dir: Directions, tFunc: string): void {
+function frame (elem: string, dir: Directions, tFunc: TimingFunc): void {
     if(dir === Directions.RIGHT){
-
+        console.log(tFunc);
     }
 }
-frame('id', Directions.RIGHT, 'fast');
+frame('id', Directions.RIGHT, TimingFunc.EASE_IN);
+*/
 
+// Type Unknown
 
+//const someValue: unknown = 10;
+//someValue.method();
+
+function fetchData(data: unknown): void {
+    if(typeof data === 'string'){
+        console.log(data.toUpperCase());
+    }
+}
 
 
 

@@ -208,21 +208,32 @@ const userFreeze: Readonly<IUser> = {
 //userFreeze.login = 'newUser'; error
 */
 // Enums
-var Directions;
-(function (Directions) {
-    Directions[Directions["TOP"] = 0] = "TOP";
-    Directions[Directions["RIGHT"] = 1] = "RIGHT";
-    Directions[Directions["LEFT"] = 2] = "LEFT";
-    Directions[Directions["BOTTOM"] = 3] = "BOTTOM";
-})(Directions || (Directions = {}));
-var TimingFunc;
-(function (TimingFunc) {
-    TimingFunc[TimingFunc["EASE"] = 1] = "EASE";
-    TimingFunc[TimingFunc["EASE_IN"] = 10] = "EASE_IN";
-    TimingFunc[TimingFunc["LINEAR"] = 100] = "LINEAR";
-})(TimingFunc || (TimingFunc = {}));
-function frame(elem, dir, tFunc) {
-    if (dir === Directions.RIGHT) {
+/*
+enum Directions {
+    TOP,
+    RIGHT,
+    LEFT,
+    BOTTOM
+}
+
+enum  TimingFunc {
+    EASE = 'ease',
+    EASE_IN = 'ease-in',
+    LINEAR = 'linear',
+}
+
+function frame (elem: string, dir: Directions, tFunc: TimingFunc): void {
+    if(dir === Directions.RIGHT){
+        console.log(tFunc);
     }
 }
-frame('id', Directions.RIGHT, 'fast');
+frame('id', Directions.RIGHT, TimingFunc.EASE_IN);
+*/
+// Type Unknown
+//const someValue: unknown = 10;
+//someValue.method();
+function fetchData(data) {
+    if (typeof data === 'string') {
+        console.log(data.toUpperCase());
+    }
+}
