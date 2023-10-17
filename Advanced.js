@@ -232,37 +232,63 @@ frame('id', Directions.RIGHT, TimingFunc.EASE_IN);
 // Type Unknown
 //const someValue: unknown = 10;
 //someValue.method();
-function fetchData(data) {
-    if (typeof data === 'string') {
+/*
+function fetchData(data: unknown): void {
+    if(typeof data === 'string'){
         console.log(data.toUpperCase());
     }
 }
+
 const userData = '{"isBirthday": true, "age": 30, "userName": "Anna"}';
-function safeParse(str) {
+
+function safeParse(str: string): unknown{
     return JSON.parse(str);
 }
+
 const data = safeParse(userData);
 //console.log(data);
-function transeferData(data) {
-    if (typeof data === 'string') {
+
+function transeferData(data: unknown): void {
+    if(typeof data === 'string'){
         console.log(data.toUpperCase());
-    }
-    else if (typeof data === 'object' && data) {
+    } else if (typeof data === 'object' && data){
         console.log(data);
-    }
-    else {
+    } else {
         console.log('Some Error');
     }
 }
+
 transeferData(data);
+
+
 try {
-    if (1) {
-        throw new Error('Error');
-    }
-    ;
-}
-catch (e) {
-    if (e instanceof Error) {
-        console.log(e.message);
+    if(1){ throw new Error('Error')};
+} catch (e){
+    if(e instanceof Error){
+        console.log(e.message)
     }
 }
+
+
+type T0 = any | unknown; // any type
+type T1 = number | unknown; // unknown type
+type T2 = any & unknown; // unknown type
+type T3 = number & unknown; // number type
+*/
+const dataFromControl = {
+    water: 200,
+    el: 350
+};
+function checkReadings(data) {
+    const dataFromUser = {
+        water: 200,
+        el: 350
+    };
+    if (data.el === dataFromUser.el && data.water === dataFromUser.water) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+console.log(checkReadings(dataFromControl));

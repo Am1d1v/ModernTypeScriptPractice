@@ -252,6 +252,7 @@ frame('id', Directions.RIGHT, TimingFunc.EASE_IN);
 //const someValue: unknown = 10;
 //someValue.method();
 
+/*
 function fetchData(data: unknown): void {
     if(typeof data === 'string'){
         console.log(data.toUpperCase());
@@ -293,9 +294,27 @@ type T0 = any | unknown; // any type
 type T1 = number | unknown; // unknown type
 type T2 = any & unknown; // unknown type
 type T3 = number & unknown; // number type
+*/
 
+const dataFromControl = {
+    water: 200,
+    el: 350
+};
 
+function checkReadings(data: typeof dataFromControl): boolean{
+    const dataFromUser = {
+        water: 200,
+        el: 350
+    }
 
+    if(data.el === dataFromUser.el && data.water === dataFromUser.water){
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(checkReadings(dataFromControl))
 
 
 
