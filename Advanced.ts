@@ -258,28 +258,35 @@ function fetchData(data: unknown): void {
     }
 }
 
-const userData = '{"isBirthday": true, "age": 30, "name": "Anna"}';
+const userData = '{"isBirthday": true, "age": 30, "userName": "Anna"}';
 
 function safeParse(str: string): unknown{
     return JSON.parse(str);
 }
 
 const data = safeParse(userData);
+//console.log(data);
 
-
-function transeferData(data: unknown): void{
+function transeferData(data: unknown): void {
     if(typeof data === 'string'){
-        console.log(data.toUpperCase())
+        console.log(data.toUpperCase());
     } else if (typeof data === 'object' && data){
-        console.log(`Object: ${data}`);
+        console.log(data);
     } else {
         console.log('Some Error');
     }
 }
 
+transeferData(data);
 
 
-
+try {
+    if(1){ throw new Error('Error')};
+} catch (e){
+    if(e instanceof Error){
+        console.log(e.message)
+    }
+}
 
 
 

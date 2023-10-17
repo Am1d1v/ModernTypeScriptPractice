@@ -237,19 +237,32 @@ function fetchData(data) {
         console.log(data.toUpperCase());
     }
 }
-const userData = '{"isBirthday": true, "age": 30, "name": "Anna"}';
+const userData = '{"isBirthday": true, "age": 30, "userName": "Anna"}';
 function safeParse(str) {
     return JSON.parse(str);
 }
 const data = safeParse(userData);
+//console.log(data);
 function transeferData(data) {
     if (typeof data === 'string') {
         console.log(data.toUpperCase());
     }
     else if (typeof data === 'object' && data) {
-        console.log(`Object: ${data}`);
+        console.log(data);
     }
     else {
         console.log('Some Error');
+    }
+}
+transeferData(data);
+try {
+    if (1) {
+        throw new Error('Error');
+    }
+    ;
+}
+catch (e) {
+    if (e instanceof Error) {
+        console.log(e.message);
     }
 }
