@@ -237,3 +237,19 @@ function fetchData(data) {
         console.log(data.toUpperCase());
     }
 }
+const userData = '{"isBirthday": true, "age": 30, "name": "Anna"}';
+function safeParse(str) {
+    return JSON.parse(str);
+}
+const data = safeParse(userData);
+function transeferData(data) {
+    if (typeof data === 'string') {
+        console.log(data.toUpperCase());
+    }
+    else if (typeof data === 'object' && data) {
+        console.log(`Object: ${data}`);
+    }
+    else {
+        console.log('Some Error');
+    }
+}

@@ -258,14 +258,24 @@ function fetchData(data: unknown): void {
     }
 }
 
+const userData = '{"isBirthday": true, "age": 30, "name": "Anna"}';
+
+function safeParse(str: string): unknown{
+    return JSON.parse(str);
+}
+
+const data = safeParse(userData);
 
 
-
-
-
-
-
-
+function transeferData(data: unknown): void{
+    if(typeof data === 'string'){
+        console.log(data.toUpperCase())
+    } else if (typeof data === 'object' && data){
+        console.log(`Object: ${data}`);
+    } else {
+        console.log('Some Error');
+    }
+}
 
 
 
