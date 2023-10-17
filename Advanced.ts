@@ -289,6 +289,11 @@ try {
 }
 
 
+type T0 = any | unknown; // any type
+type T1 = number | unknown; // unknown type
+type T2 = any & unknown; // unknown type
+type T3 = number & unknown; // number type
+
 
 
 
