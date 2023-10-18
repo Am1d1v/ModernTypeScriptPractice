@@ -297,20 +297,32 @@ function checkReadings(data: typeof dataFromControl): boolean{
 console.log(checkReadings(dataFromControl))
 */
 // Type Assertion
-const fetchData = (url, method) => {
+/*
+const fetchData = (url: string, method: 'GET' | 'POST'): void => {
     console.log('fetched', `Method: ${method}`);
-};
+}
+
 /* const reqOptions = {
     url: 'https:.//someulr.com',
     method: 'GET' as 'GET'
 } */
+/*
 const reqOptions = {
     url: 'https:.//someulr.com',
     method: 'GET'
-};
+    } as const
+
 const str = 'str';
-const method = 'GET';
+const method = 'GET'
+
+
 fetchData('aaa', 'GET');
 //fetchData(reqOptions.url, reqOptions.method as 'GET');
 fetchData(reqOptions.url, reqOptions.method);
 fetchData(reqOptions.url, method);
+*/
+const box = document.querySelector('.box');
+box.style.backgroundColor = 'violet';
+const input = document.querySelector('input');
+const someNumber = +input.value;
+console.log(someNumber, `Type: ${typeof someNumber}`);

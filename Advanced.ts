@@ -320,6 +320,7 @@ console.log(checkReadings(dataFromControl))
 
 // Type Assertion
 
+/*
 const fetchData = (url: string, method: 'GET' | 'POST'): void => {
     console.log('fetched', `Method: ${method}`);
 }
@@ -329,6 +330,7 @@ const fetchData = (url: string, method: 'GET' | 'POST'): void => {
     method: 'GET' as 'GET'
 } */
 
+/*
 const reqOptions = {
     url: 'https:.//someulr.com',
     method: 'GET'
@@ -342,11 +344,14 @@ fetchData('aaa', 'GET');
 //fetchData(reqOptions.url, reqOptions.method as 'GET');
 fetchData(reqOptions.url, reqOptions.method);
 fetchData(reqOptions.url, method);
+*/
 
+const box = document.querySelector('.box') as HTMLElement;
+box.style.backgroundColor = 'violet';
+const input = document.querySelector('input') as HTMLInputElement;
 
-
-
-
+const someNumber: number = +input.value;
+console.log(someNumber, `Type: ${typeof someNumber}`);
 
 
 
