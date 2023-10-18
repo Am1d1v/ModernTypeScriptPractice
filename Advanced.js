@@ -325,4 +325,12 @@ const box = document.querySelector('.box');
 box.style.backgroundColor = 'violet';
 const input = document.querySelector('input');
 const someNumber = +input.value;
+//const someNumber: number = input.value as any as number; // Bad Practice
 console.log(someNumber, `Type: ${typeof someNumber}`);
+let a = 'value'; // string type
+let b = 'value'; // 'value' type
+let c = { d: 100 };
+let t = ['one', 2, 3];
+let value = 'value';
+let arr = ['one', 'two', 3];
+let obj = { d: 100 };

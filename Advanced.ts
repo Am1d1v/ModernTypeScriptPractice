@@ -351,18 +351,20 @@ box.style.backgroundColor = 'violet';
 const input = document.querySelector('input') as HTMLInputElement;
 
 const someNumber: number = +input.value;
+//const someNumber: number = input.value as any as number; // Bad Practice
 console.log(someNumber, `Type: ${typeof someNumber}`);
 
 
+let a = 'value'; // string type
+let b = 'value' as const; // 'value' type
 
+let c = {d: 100} as const;
 
+let t = ['one', 2, 3] as const;
 
-
-
-
-
-
-
+let value = 'value';
+let arr = ['one', 'two', 3]
+let obj = {d: 100}
 
 
 
