@@ -298,8 +298,12 @@ console.log(checkReadings(dataFromControl))
 */
 // Type Assertion
 const fetchData = (url, method) => {
-    console.log('fetched');
+    console.log('fetched', `Method: ${method}`);
 };
+/* const reqOptions = {
+    url: 'https:.//someulr.com',
+    method: 'GET' as 'GET'
+} */
 const reqOptions = {
     url: 'https:.//someulr.com',
     method: 'GET'
@@ -307,5 +311,6 @@ const reqOptions = {
 const str = 'str';
 const method = 'GET';
 fetchData('aaa', 'GET');
+//fetchData(reqOptions.url, reqOptions.method as 'GET');
 fetchData(reqOptions.url, reqOptions.method);
 fetchData(reqOptions.url, method);
