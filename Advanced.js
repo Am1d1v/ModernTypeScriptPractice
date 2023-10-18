@@ -275,20 +275,33 @@ type T1 = number | unknown; // unknown type
 type T2 = any & unknown; // unknown type
 type T3 = number & unknown; // number type
 */
+/*
 const dataFromControl = {
     water: 200,
     el: 350
 };
-function checkReadings(data) {
+
+function checkReadings(data: typeof dataFromControl): boolean{
     const dataFromUser = {
         water: 200,
         el: 350
-    };
-    if (data.el === dataFromUser.el && data.water === dataFromUser.water) {
-        return true;
     }
-    else {
-        return false;
+
+    if(data.el === dataFromUser.el && data.water === dataFromUser.water){
+        return true
+    } else {
+        return false
     }
 }
-console.log(checkReadings(dataFromControl));
+
+console.log(checkReadings(dataFromControl))
+*/
+// Type Assertion
+const fetchData = (url, method) => {
+    console.log('fetched');
+};
+const reqOprions = {
+    url: 'https:.//someulr.com',
+    method: 'GET'
+};
+fetchData('aaa', 'GET');

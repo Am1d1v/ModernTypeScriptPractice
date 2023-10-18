@@ -296,6 +296,7 @@ type T2 = any & unknown; // unknown type
 type T3 = number & unknown; // number type
 */
 
+/*
 const dataFromControl = {
     water: 200,
     el: 350
@@ -315,6 +316,104 @@ function checkReadings(data: typeof dataFromControl): boolean{
 }
 
 console.log(checkReadings(dataFromControl))
+*/
+
+// Type Assertion
+
+const fetchData = (url: string, method: 'GET' | 'POST'): void => {
+    console.log('fetched');
+}
+
+const reqOptions = {
+    url: 'https:.//someulr.com',
+    method: 'GET'
+}
+
+const str = 'str';
+
+fetchData('aaa', 'GET');
+fetchData(reqOptions.url, reqOptions.method);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
