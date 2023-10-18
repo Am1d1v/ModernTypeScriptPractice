@@ -300,8 +300,12 @@ console.log(checkReadings(dataFromControl))
 const fetchData = (url, method) => {
     console.log('fetched');
 };
-const reqOprions = {
+const reqOptions = {
     url: 'https:.//someulr.com',
     method: 'GET'
 };
+const str = 'str';
+const method = 'GET';
 fetchData('aaa', 'GET');
+fetchData(reqOptions.url, reqOptions.method);
+fetchData(reqOptions.url, method);

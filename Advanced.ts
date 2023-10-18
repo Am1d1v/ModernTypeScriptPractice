@@ -330,9 +330,11 @@ const reqOptions = {
 }
 
 const str = 'str';
+const method = 'GET'
 
 fetchData('aaa', 'GET');
-fetchData(reqOptions.url, reqOptions.method);
+fetchData(reqOptions.url, reqOptions.method as 'GET');
+fetchData(reqOptions.url, method);
 
 
 
