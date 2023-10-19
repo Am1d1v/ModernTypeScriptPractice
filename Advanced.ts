@@ -369,21 +369,42 @@ let obj = {d: 100}
 */
 
 
-const x = new Number(10);
-const y = 10;
-console.log( x == y);
-console.log( x === y);
+// const x = new Number(10);
+// const y = 10;
+// console.log( x == y);
+// console.log( x === y);
 
-let q: Number = new Number(10);
-let w: number = 5;
+// let q: Number = new Number(10);
+// let w: number = 5;
 
-q = w;
-console.log(q);
+// q = w;
+// console.log(q);
 //w = q;
 
+const num = 10;
+const strNum: string = num.toString();
+console.log(strNum, typeof strNum); // string type
+
+const str = '5';
+const numStr: number = +str;
+console.log(numStr, typeof numStr); // number type
 
 
+const department = {
+    name: 'webDev',
+    budget: 50000
+}
 
+interface Project {
+    name: string;
+    projectBudget: number;
+}
+
+const mainProject: Project = {
+    ...department,
+    projectBudget: 5000
+}
+console.log(mainProject)
 
 
 
