@@ -321,16 +321,33 @@ fetchData('aaa', 'GET');
 fetchData(reqOptions.url, reqOptions.method);
 fetchData(reqOptions.url, method);
 */
-const box = document.querySelector('.box');
+/*
+const box = document.querySelector('.box') as HTMLElement;
 box.style.backgroundColor = 'violet';
-const input = document.querySelector('input');
-const someNumber = +input.value;
+const input = document.querySelector('input') as HTMLInputElement;
+
+const someNumber: number = +input.value;
 //const someNumber: number = input.value as any as number; // Bad Practice
 console.log(someNumber, `Type: ${typeof someNumber}`);
+
+
 let a = 'value'; // string type
-let b = 'value'; // 'value' type
-let c = { d: 100 };
-let t = ['one', 2, 3];
+let b = 'value' as const; // 'value' type
+
+let c = {d: 100} as const;
+
+let t = ['one', 2, 3] as const;
+
 let value = 'value';
-let arr = ['one', 'two', 3];
-let obj = { d: 100 };
+let arr = ['one', 'two', 3]
+let obj = {d: 100}
+*/
+const x = new Number(10);
+const y = 10;
+console.log(x == y);
+console.log(x === y);
+let q = new Number(10);
+let w = 5;
+q = w;
+console.log(q);
+//w = q;

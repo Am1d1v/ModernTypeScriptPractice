@@ -346,6 +346,7 @@ fetchData(reqOptions.url, reqOptions.method);
 fetchData(reqOptions.url, method);
 */
 
+/*
 const box = document.querySelector('.box') as HTMLElement;
 box.style.backgroundColor = 'violet';
 const input = document.querySelector('input') as HTMLInputElement;
@@ -365,13 +366,20 @@ let t = ['one', 2, 3] as const;
 let value = 'value';
 let arr = ['one', 'two', 3]
 let obj = {d: 100}
+*/
 
 
+const x = new Number(10);
+const y = 10;
+console.log( x == y);
+console.log( x === y);
 
+let q: Number = new Number(10);
+let w: number = 5;
 
-
-
-
+q = w;
+console.log(q);
+//w = q;
 
 
 
