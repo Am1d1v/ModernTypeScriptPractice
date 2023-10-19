@@ -390,7 +390,7 @@ const numStr: number = +str;
 console.log(numStr, typeof numStr); // number type
  */
 
-interface IDepartment {
+/* interface IDepartment {
     name: string;
     budget: number;
 }
@@ -409,10 +409,10 @@ interface IProject {
     ...department,
     projectBudget: 5000
 }
-console.log(mainProject) */
+console.log(mainProject) 
 
 
-function transformDepartment(department: IDepartment, amount: number): IProject {
+ function transformDepartment(department: IDepartment, amount: number): IProject {
 
     return {
         name: department.name,
@@ -421,15 +421,37 @@ function transformDepartment(department: IDepartment, amount: number): IProject 
 }
 
 const mainProject = transformDepartment(department, 5000);
-console.log(mainProject);
+console.log(mainProject); */
+ 
+
+// Type Guard
+
+/* 
+const btn = document.querySelector('.btn') as HTMLElement;
+btn.style.margin = '20px';
+btn?.addEventListener('click', () => {
+    alert('Clicked');
+})
+
+ */
+
+function printType(type: string | string[] | number | boolean): void{
+    if(Array.isArray(type)){
+        type.forEach(type => console.log(`${type}, Type: string[]`));
+    } else if (isNumber(type)){
+        console.log(`${type}, Type: Number`)
+    } else {
+        console.log(type);
+    }
+}
 
 
+function isNumber(n: string | boolean | number): n is number{
+    return typeof n === 'number';
+}
 
-
-
-
-
-
+printType('str');
+printType(5);
 
 
 
