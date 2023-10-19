@@ -435,34 +435,59 @@ btn?.addEventListener('click', () => {
 
  */
 
-function printType(type: string | string[] | number | boolean): void{
+/* function printType(type: string | string[] | number | boolean): void{
     if(Array.isArray(type)){
         type.forEach(type => console.log(`${type}, Type: string[]`));
     } else if (isNumber(type)){
-        console.log(`${type}, Type: Number`)
-    } else {
         console.log(type);
-    }
+    } 
 }
 
-
+/*
 function isNumber(n: string | boolean | number): n is number{
+    return typeof n === 'number';
+}
+*/
+/* 
+function isNumber(n:unknown): n is number{
     return typeof n === 'number';
 }
 
 printType('str');
-printType(5);
+printType(6); 
+ */
 
 
+interface Car {
+    engine: string;
+    wheels: number;
+}
+
+interface Ship {
+    engine: string;
+    sail: string;
+}
 
 
+function repairVehilce(vehicle: Car | Ship): void{
+    if(isCar(vehicle)){
+        console.log(`Wheels: ${vehicle.wheels}`);
+    } else {
+        console.log(`Sail: ${vehicle.sail}`);
+    }
+}
 
 
+function isCar(car: Car | Ship): car is Car{
+    return 'wheels' in car;
+}
 
+const someCar: Car = {
+    engine: 'EngineName',
+    wheels: 6
+}
 
-
-
-
+repairVehilce(someCar);
 
 
 
