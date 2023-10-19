@@ -381,35 +381,47 @@ let obj = {d: 100}
 // console.log(q);
 //w = q;
 
-const num = 10;
+/* const num = 10;
 const strNum: string = num.toString();
 console.log(strNum, typeof strNum); // string type
 
 const str = '5';
 const numStr: number = +str;
 console.log(numStr, typeof numStr); // number type
+ */
 
+interface IDepartment {
+    name: string;
+    budget: number;
+}
 
-const department = {
+const department: IDepartment = {
     name: 'webDev',
     budget: 50000
 }
 
-interface Project {
+interface IProject {
     name: string;
     projectBudget: number;
 }
 
-const mainProject: Project = {
+/* const mainProject: Project = {
     ...department,
     projectBudget: 5000
 }
-console.log(mainProject)
+console.log(mainProject) */
 
 
+function transformDepartment(department: IDepartment, amount: number): IProject {
 
+    return {
+        name: department.name,
+        projectBudget: amount
+    }
+}
 
-
+const mainProject = transformDepartment(department, 5000);
+console.log(mainProject);
 
 
 
