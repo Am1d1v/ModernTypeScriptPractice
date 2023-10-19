@@ -472,7 +472,7 @@ interface Ship {
 function repairVehilce(vehicle: Car | Ship): void{
     if(isCar(vehicle)){
         console.log(`Wheels: ${vehicle.wheels}`);
-    } else {
+    } else if (isShip(vehicle)){
         console.log(`Sail: ${vehicle.sail}`);
     }
 }
@@ -482,12 +482,22 @@ function isCar(car: Car | Ship): car is Car{
     return 'wheels' in car;
 }
 
+function isShip(ship: Car | Ship): ship is Car{
+    return (ship as Ship).sail !== undefined;
+}
+
 const someCar: Car = {
     engine: 'EngineName',
     wheels: 6
 }
 
+const someShip: Ship = {
+    engine: 'ShipEngineName',
+    sail: 'SailName'
+}
+
 repairVehilce(someCar);
+repairVehilce(someShip);
 
 
 
