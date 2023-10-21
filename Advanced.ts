@@ -504,26 +504,33 @@ repairVehilce(someShip);
 // Type Never
 
 
+/*
 interface ICar {
-    name: 'Car'
+    name: 'Car';
     engine: string;
     wheels: number;
 }
 
 interface IShip {
-    name: 'Ship'
+    name: 'Ship';
     engine: string;
     sail: string;
 }
 
 interface IAirplane {
-    name: 'Airplane'
+    name: 'Airplane';
     engine: string;
     wings: string;
 }
 
-type Vehicle =  ICar | IShip | IAirplane;
+interface INewVehicle {
+    name: 'newVehicle';
+    engine: string;
+    wings: string;
+}
 
+type Vehicle =  ICar | IShip | IAirplane | INewVehicle;
+*/
 
 // function repairVehilce(vehicle: Vehicle): void{
 //     if(isCar(vehicle)){
@@ -536,6 +543,7 @@ type Vehicle =  ICar | IShip | IAirplane;
 //     }
 // }
 
+/*
 function repairVehilce(vehicle: Vehicle): void{
 
     switch (vehicle.name){
@@ -549,7 +557,8 @@ function repairVehilce(vehicle: Vehicle): void{
             console.log(`Vehicle: Airplane, wings: ${vehicle.wings}`);
             break;     
         default:
-            console.log(vehicle); // never type      
+           // const something: never = vehicle;
+            console.log(vehicle); // never type // now it is INewVehicle type     
     }
 }
 
@@ -560,23 +569,53 @@ function isCar(car: Vehicle): car is ICar{
 function isShip(ship: Vehicle): ship is IShip{
     return (ship as IShip).sail !== undefined;
 }
+*/
 
-// const someCar: ICar = {
-//     engine: 'EngineName',
-//     wheels: 6
-// }
+/* const someCar: ICar = {
+    engine: 'EngineName',
+    wheels: 6
+}
 
-// const someShip: IShip = {
-//     engine: 'ShipEngineName',
-//     sail: 'SailName'
-// }
+const someShip: IShip = {
+    engine: 'ShipEngineName',
+    sail: 'SailName'
+}
 
-// repairVehilce(someCar);
-// repairVehilce(someShip);
-
-
+repairVehilce(someCar);
+repairVehilce(someShip); */
 
 
+// Function Overloading
+
+interface Square {
+    side: number;
+    area: number;
+}
+
+interface Rect {
+    a: number;
+    b: number
+    area: number;
+}
+
+
+function calculateArea(a: number, b?: number): Square | Rect{
+
+    if(b){
+        const rect: Rect = {
+            a, b,
+            area: a * b
+        }
+
+        return rect;
+    } else {
+        const square: Square = {
+            side: a,
+            area: a * a
+        }
+        return square;
+    }
+}
 
 
 
