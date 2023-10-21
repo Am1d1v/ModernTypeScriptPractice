@@ -599,6 +599,7 @@ interface Rect {
 }
 
 
+/*
 function calculateArea(a: number, b?: number): Square | Rect{
 
     if(b){
@@ -616,7 +617,32 @@ function calculateArea(a: number, b?: number): Square | Rect{
         return square;
     }
 }
+*/
 
+function calculateArea(side: number): Square
+function calculateArea(a: number, b: number): Rect
+function calculateArea(a: number, b?: number): Square | Rect{
+
+    if(b){
+        const rect: Rect = {
+            a, b,
+            area: a * b
+        }
+
+        console.log(rect);
+        return rect;
+    } else {
+        const square: Square = {
+            side: a,
+            area: a * a
+        }
+
+        console.log(square);
+        return square;
+    }
+}
+calculateArea(10);
+calculateArea(10, 6);
 
 
 

@@ -6,6 +6,7 @@ function calculateArea(a, b) {
             a, b,
             area: a * b
         };
+        console.log(rect);
         return rect;
     }
     else {
@@ -13,6 +14,9 @@ function calculateArea(a, b) {
             side: a,
             area: a * a
         };
+        console.log(square);
         return square;
     }
 }
+calculateArea(10);
+calculateArea(10, 6);
