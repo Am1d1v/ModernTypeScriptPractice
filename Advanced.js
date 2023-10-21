@@ -7,6 +7,10 @@ function repairVehilce(vehicle) {
     else if (isShip(vehicle)) {
         console.log(`Sail: ${vehicle.sail}`);
     }
+    else {
+        //const something: never = vehicle; // never type
+        console.log(vehicle.wings);
+    }
 }
 function isCar(car) {
     return 'wheels' in car;
@@ -14,13 +18,13 @@ function isCar(car) {
 function isShip(ship) {
     return ship.sail !== undefined;
 }
-const someCar = {
-    engine: 'EngineName',
-    wheels: 6
-};
-const someShip = {
-    engine: 'ShipEngineName',
-    sail: 'SailName'
-};
-repairVehilce(someCar);
-repairVehilce(someShip);
+// const someCar: ICar = {
+//     engine: 'EngineName',
+//     wheels: 6
+// }
+// const someShip: IShip = {
+//     engine: 'ShipEngineName',
+//     sail: 'SailName'
+// }
+// repairVehilce(someCar);
+// repairVehilce(someShip);

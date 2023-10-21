@@ -458,6 +458,7 @@ printType(6);
  */
 
 
+/*
 interface Car {
     engine: string;
     wheels: number;
@@ -498,6 +499,64 @@ const someShip: Ship = {
 
 repairVehilce(someCar);
 repairVehilce(someShip);
+*/
+
+// Type Never
+
+
+interface ICar {
+    name: 'Car'
+    engine: string;
+    wheels: number;
+}
+
+interface IShip {
+    name: 'Ship'
+    engine: string;
+    sail: string;
+}
+
+interface IAirplane {
+    name: 'Airplane'
+    engine: string;
+    wings: string;
+}
+
+type Vehicle =  ICar | IShip | IAirplane;
+
+
+function repairVehilce(vehicle: Vehicle): void{
+    if(isCar(vehicle)){
+        console.log(`Wheels: ${vehicle.wheels}`);
+    } else if (isShip(vehicle)){
+        console.log(`Sail: ${vehicle.sail}`);
+    } else {
+        //const something: never = vehicle; // never type
+        console.log(vehicle.wings);
+    }
+}
+
+
+function isCar(car: Vehicle): car is ICar{
+    return 'wheels' in car;
+}
+
+function isShip(ship: Vehicle): ship is IShip{
+    return (ship as IShip).sail !== undefined;
+}
+
+// const someCar: ICar = {
+//     engine: 'EngineName',
+//     wheels: 6
+// }
+
+// const someShip: IShip = {
+//     engine: 'ShipEngineName',
+//     sail: 'SailName'
+// }
+
+// repairVehilce(someCar);
+// repairVehilce(someShip);
 
 
 
