@@ -501,8 +501,9 @@ repairVehilce(someCar);
 repairVehilce(someShip);
 */
 
-// Type Never
 
+
+// Type Never
 
 /*
 interface ICar {
@@ -587,6 +588,7 @@ repairVehilce(someShip); */
 
 // Function Overloading
 
+/*
 interface Square {
     side: number;
     area: number;
@@ -617,7 +619,7 @@ function calculateArea(a: number, b?: number): Square | Rect{
         return square;
     }
 }
-*/
+
 
 function calculateArea(side: number): Square
 function calculateArea(a: number, b: number): Rect
@@ -643,13 +645,55 @@ function calculateArea(a: number, b?: number): Square | Rect{
 }
 calculateArea(10);
 calculateArea(10, 6);
+*/
 
+// Right Interface Separation
 
+interface ICar {
+    name: 'Car';
+    engine: string;
+    wheels: number;
+}
 
+interface IShip {
+    name: 'Ship';
+    engine: string;
+    sail: string;
+}
 
+interface IAirplane {
+    name: 'Airplane';
+    engine: string;
+    wings: string;
+}
 
+interface IComplexVehicle {
+    name: 'Car' | 'Ship' | 'Airplane';
+    engine: string;
+    wheels?: number;
+    sail?: string;
+    wings?: string;
+}
 
+type Vehicle = ICar | IShip | IAirplane;
 
+function repairVehilce(vehicle: IComplexVehicle): void{
+
+    switch (vehicle.name){
+        case 'Car':
+            console.log(`Vehicle: Car, wheels: ${vehicle.wheels! * 2}`);
+            break;
+        case 'Ship':
+            console.log(`Vehicle: Ship, sail: ${vehicle.sail}`);
+            break;
+        case 'Airplane':
+            console.log(`Vehicle: Airplane, wings: ${vehicle.wings}`);
+            break;     
+        default:
+           // const something: never = vehicle;
+            console.log(vehicle);  // IComplexVehicle
+    }
+}
 
 
 
