@@ -720,16 +720,47 @@ checkAnimal(someAnimal);
 
 */
 // DOM 
-const box = document.querySelector('.box'); // htmlelement
+/*
+const box = document.querySelector('.box') as HTMLElement; // htmlelement
 const input = document.querySelector('input'); //HTMLInputElement
 const link = document.querySelector('a'); //HTMLAnchorElement
-const paragraph = document.querySelector('.paragraph');
+const paragraph = document.querySelector('.paragraph') as HTMLParagraphElement;
 //const links = document.querySelectorAll('a') as HTMLElement; // Error
 const links = document.querySelectorAll('a');
-if (link) {
+
+
+if(link){
     link.href = 'https://www.google.com';
     link.style.textDecoration = 'none';
     link.style.fontSize = '20px';
 }
+
 //input?.value
+
 const elem = document.createElement('a'); //HTMLAnchorElement
+*/
+// void
+/*
+
+type VoidFunc = () => void;
+
+const retStrging: VoidFunc = () => {
+
+    return 'string';
+}
+const str = retStrging(); // str: void
+console.log(str);
+
+const f1(): void{
+    return true;
+}
+
+const f2 = function(): void {
+    return false
+}
+
+
+const f3: VoidFunc = () =>{
+    return false
+}
+*/

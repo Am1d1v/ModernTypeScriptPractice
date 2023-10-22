@@ -775,6 +775,7 @@ checkAnimal(someAnimal);
 
 // DOM 
 
+/*
 const box = document.querySelector('.box') as HTMLElement; // htmlelement
 const input = document.querySelector('input'); //HTMLInputElement
 const link = document.querySelector('a'); //HTMLAnchorElement
@@ -792,15 +793,34 @@ if(link){
 //input?.value
 
 const elem = document.createElement('a'); //HTMLAnchorElement
+*/
+
+// void
+ 
+/*
+
+type VoidFunc = () => void;
+
+const retStrging: VoidFunc = () => {
+
+    return 'string';
+}
+const str = retStrging(); // str: void
+console.log(str);
+
+const f1(): void{
+    return true;
+}
+
+const f2 = function(): void {
+    return false
+}
 
 
-
-
-
-
-
-
-
+const f3: VoidFunc = () =>{
+    return false
+}
+*/
 
 
 
