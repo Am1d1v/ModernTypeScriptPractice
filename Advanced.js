@@ -656,33 +656,80 @@ const car: IComplexVehicle = {
 repairVehilce(car);
 */
 // Type Guard
-var AnimalStatus;
-(function (AnimalStatus) {
-    AnimalStatus["Available"] = "available";
-    AnimalStatus["NotAvailable"] = "not available";
-})(AnimalStatus || (AnimalStatus = {}));
-function isAvailable(res) {
-    if (res.status === AnimalStatus.Available) {
+/*
+enum AnimalStatus  {
+    Available = 'available',
+    NotAvailable = 'not available'
+}
+
+interface IAnimalRequest  {
+    animal: 'cat' | 'dog' | 'bird',
+    breed: string;
+    sterilized?: string;
+}
+
+interface IAvailable extends IAnimalRequest {
+    location: string;
+    age?: number
+}
+
+interface INotAvailable {
+    message: string;
+}
+
+interface IAvailableResponse {
+    status: AnimalStatus.Available;
+    data: IAnimalRequest;
+}
+
+interface INotAvailableResponse {
+    status: AnimalStatus.NotAvailable;
+    data: INotAvailable
+}
+
+type Res = IAvailableResponse | INotAvailableResponse
+
+function isAvailable(res: Res): res is IAvailableResponse{
+
+    if(res.status === AnimalStatus.Available){
         console.log(res);
-        return true;
-    }
-    else {
-        return false;
-    }
-}
-function checkAnimal(animal) {
-    if (isAvailable(animal)) {
-        return animal;
-    }
-    else {
-        return `${animal} is missing`;
+        return true
+    } else {
+        return false
     }
 }
-const someAnimal = {
-    data: {
+
+function checkAnimal(animal: Res): IAvailableResponse | string{
+
+    if(isAvailable(animal)){
+        return animal
+    } else{
+        return `${animal} is missing`
+    }
+}
+
+const someAnimal: IAvailableResponse= {
+    data:{
         animal: 'bird',
         breed: 'BirdBreed'
     },
     status: AnimalStatus.Available
-};
+}
+
 checkAnimal(someAnimal);
+
+*/
+// DOM 
+const box = document.querySelector('.box'); // htmlelement
+const input = document.querySelector('input'); //HTMLInputElement
+const link = document.querySelector('a'); //HTMLAnchorElement
+const paragraph = document.querySelector('.paragraph');
+//const links = document.querySelectorAll('a') as HTMLElement; // Error
+const links = document.querySelectorAll('a');
+if (link) {
+    link.href = 'https://www.google.com';
+    link.style.textDecoration = 'none';
+    link.style.fontSize = '20px';
+}
+//input?.value
+const elem = document.createElement('a'); //HTMLAnchorElement
