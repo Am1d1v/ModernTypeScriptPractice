@@ -649,6 +649,8 @@ calculateArea(10, 6);
 
 // Right Interface Separation
 
+/*
+// Bad Practice 
 interface ICar {
     name: 'Car';
     engine: string;
@@ -695,18 +697,77 @@ function repairVehilce(vehicle: IComplexVehicle): void{
     }
 }
 
+const car: IComplexVehicle = {
+    name: 'Car',
+    engine: 'EngineName'
+}
+
+repairVehilce(car);
+*/
 
 
+// Type Guard
 
+enum AnimalStatus  {
+    Available = 'available',
+    NotAvailable = 'not available'
+}
 
+interface IAnimalRequest  {
+    animal: 'cat' | 'dog' | 'bird',
+    breed: string;
+    sterilized?: string;
+}
 
+interface IAvailable extends IAnimalRequest {
+    location: string;
+    age?: number
+}
 
+interface INotAvailable {
+    message: string;
+}
 
+interface IAvailableResponse {
+    status: AnimalStatus.Available;
+    data: IAnimalRequest;
+}
 
+interface INotAvailableResponse {
+    status: AnimalStatus.NotAvailable;
+    data: INotAvailable
+}
 
+type Res = IAvailableResponse | INotAvailableResponse
 
+function isAvailable(res: Res): res is IAvailableResponse{
 
+    if(res.status === AnimalStatus.Available){
+        console.log(res);
+        return true
+    } else {
+        return false
+    }
+}
 
+function checkAnimal(animal: Res): IAvailableResponse | string{
+
+    if(isAvailable(animal)){
+        return animal
+    } else{
+        return `${animal} is missing`
+    }
+}
+
+const someAnimal: IAvailableResponse= {
+    data:{
+        animal: 'bird',
+        breed: 'BirdBreed'
+    },
+    status: AnimalStatus.Available
+}
+
+checkAnimal(someAnimal);
 
 
 
