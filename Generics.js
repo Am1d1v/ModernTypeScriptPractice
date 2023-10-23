@@ -42,15 +42,29 @@ const someProduct1: IPrintProduct<number> = {
 */
 // Generic Functions
 function processingData(data, options) {
+    data.length;
     switch (typeof data) {
         case 'string':
             return `${data}, ${options}`;
             break;
         case 'number':
-            return `${data.toFixed(0)}`;
+            return `Number: ${data}`;
             break;
         default:
             return 'Not Valid';
     }
 }
-processingData(10, 'slow');
+processingData([10], 'slow');
+function processing(data) {
+    return data;
+}
+const saver = {
+    /*    processing(data) {
+          console.log(data);
+          return data;
+      } */
+    /* processing: <T>(data: T) => {
+        return data;
+    } */
+    processing: processing
+};

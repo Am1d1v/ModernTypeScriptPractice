@@ -46,21 +46,94 @@ const someProduct1: IPrintProduct<number> = {
 
 // Generic Functions
 
-function processingData<T, S>(data: T, options: S): string{
+function processingData<T, S>(data: T[], options: S): string{
+
+    data.length;
 
     switch(typeof data){
         case 'string':
             return `${data}, ${options}`
             break;
         case 'number':
-            return `${data.toFixed(0)}`
+            return `Number: ${data}`
             break;
         default:
             return 'Not Valid'         
     }
 
 }
-processingData<number, string>(10, 'slow');
+processingData<number, string>([10], 'slow');
+
+
+function processing <T>(data: T): T{
+    return data;
+}
+
+
+interface IDataSaver {
+    processing: <T>(data: T) => T
+}
+
+
+const saver: IDataSaver = {
+  /*    processing(data) {
+        console.log(data);
+        return data;
+    } */
+
+    /* processing: <T>(data: T) => {
+        return data;
+    } */
+
+    processing: processing
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
