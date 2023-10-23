@@ -8,6 +8,7 @@ function processingData(data: string | number | boolean | string[]): string | nu
 }
 */
 
+/*
 function processingData<T>(data: T): T{
 
     return data;
@@ -40,10 +41,26 @@ const someProduct: IPrintProduct<string> = {
 const someProduct1: IPrintProduct<number> = {
     design: 10
 }
+*/
 
 
+// Generic Functions
 
+function processingData<T, S>(data: T, options: S): string{
 
+    switch(typeof data){
+        case 'string':
+            return `${data}, ${options}`
+            break;
+        case 'number':
+            return `${data.toFixed(0)}`
+            break;
+        default:
+            return 'Not Valid'         
+    }
+
+}
+processingData<number, string>(10, 'slow');
 
 
 
