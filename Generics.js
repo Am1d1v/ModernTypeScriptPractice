@@ -58,6 +58,7 @@ processingData([10], 'slow');
 function processing(data) {
     return data;
 }
+const newFunc = processing;
 const saver = {
     /*    processing(data) {
           console.log(data);

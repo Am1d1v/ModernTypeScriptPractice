@@ -69,6 +69,11 @@ function processing <T>(data: T): T{
     return data;
 }
 
+interface IProcessingFun{
+    <T>(data: T): T
+}
+
+const newFunc: IProcessingFun = processing;
 
 interface IDataSaver {
     processing: <T>(data: T) => T
